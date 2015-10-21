@@ -24,7 +24,6 @@ namespace iOSLibsBinding.FBAnnotationClustering
 
 		// @property (nonatomic, strong) NSArray * annotations;
 		[Export ("annotations", ArgumentSemantic.Strong)]
-		[Verify (StronglyTypedNSArray)]
 		NSObject[] Annotations { get; set; }
 	}
 
@@ -66,7 +65,7 @@ namespace iOSLibsBinding.FBAnnotationClustering
 
 		// -(BOOL)isLeaf;
 		[Export ("isLeaf")]
-		[Verify (MethodToProperty)]
+		//[Verify (MethodToProperty)]
 		bool IsLeaf { get; }
 
 		// -(void)subdivide;
@@ -97,42 +96,42 @@ namespace iOSLibsBinding.FBAnnotationClustering
 
 		// -(id)initWithAnnotations:(NSArray *)annotations;
 		[Export ("initWithAnnotations:")]
-		[Verify (StronglyTypedNSArray)]
+		//[Verify (StronglyTypedNSArray)]
 		IntPtr Constructor (NSObject[] annotations);
 
 		// -(void)setAnnotations:(NSArray *)annotations;
 		[Export ("setAnnotations:")]
-		[Verify (StronglyTypedNSArray)]
+		//[Verify (StronglyTypedNSArray)]
 		void SetAnnotations (NSObject[] annotations);
 
 		// -(void)addAnnotations:(NSArray *)annotations;
 		[Export ("addAnnotations:")]
-		[Verify (StronglyTypedNSArray)]
+		//[Verify (StronglyTypedNSArray)]
 		void AddAnnotations (NSObject[] annotations);
 
 		// -(void)removeAnnotations:(NSArray *)annotations;
 		[Export ("removeAnnotations:")]
-		[Verify (StronglyTypedNSArray)]
+		//[Verify (StronglyTypedNSArray)]
 		void RemoveAnnotations (NSObject[] annotations);
 
 		// -(NSArray *)clusteredAnnotationsWithinMapRect:(MKMapRect)rect withZoomScale:(double)zoomScale;
 		[Export ("clusteredAnnotationsWithinMapRect:withZoomScale:")]
-		[Verify (StronglyTypedNSArray)]
+		//[Verify (StronglyTypedNSArray)]
 		NSObject[] ClusteredAnnotationsWithinMapRect (MKMapRect rect, double zoomScale);
 
 		// -(NSArray *)clusteredAnnotationsWithinMapRect:(MKMapRect)rect withZoomScale:(double)zoomScale withFilter:(BOOL (^)(id<MKAnnotation>))filter;
 		[Export ("clusteredAnnotationsWithinMapRect:withZoomScale:withFilter:")]
-		[Verify (StronglyTypedNSArray)]
+		//[Verify (StronglyTypedNSArray)]
 		NSObject[] ClusteredAnnotationsWithinMapRect (MKMapRect rect, double zoomScale, Func<MKAnnotation, bool> filter);
 
 		// -(NSArray *)allAnnotations;
 		[Export ("allAnnotations")]
-		[Verify (MethodToProperty), Verify (StronglyTypedNSArray)]
+		//[Verify (MethodToProperty), Verify (StronglyTypedNSArray)]
 		NSObject[] AllAnnotations { get; }
 
 		// -(void)displayAnnotations:(NSArray *)annotations onMapView:(MKMapView *)mapView;
 		[Export ("displayAnnotations:onMapView:")]
-		[Verify (StronglyTypedNSArray)]
+		//[Verify (StronglyTypedNSArray)]
 		void DisplayAnnotations (NSObject[] annotations, MKMapView mapView);
 	}
 
